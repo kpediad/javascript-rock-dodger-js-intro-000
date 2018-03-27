@@ -75,18 +75,18 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
-  function moveRock() { 
+  function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-     
+
 
      function step() {
        rock.style.top = `${top += 2}px`
-    
+
        if (top < 360) {
          window.requestAnimationFrame(step)
        } else if (top < 380) {
@@ -136,7 +136,6 @@ function endGame() {
   })
   window.removeEventListener('keydown', moveDodger)
   alert ("YOU LOSE!")
-  
 }
 
 function moveDodger(e) {
