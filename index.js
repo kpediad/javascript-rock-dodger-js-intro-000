@@ -63,7 +63,7 @@ function createRock(x) {
   // Hmmm, why would we have used `var` here?
   var top = 0
 
-  rock.style.top = top
+  rock.style.top = `${top}px`
 
   /**
    * Now that we have a rock, we'll need to append
@@ -162,11 +162,11 @@ function moveDodgerLeft() {
   function step() {
     DODGER.style.left = `${left -= 4}px`
   }
-  
+
   if (left >= 4) {
     window.requestAnimationFrame(step)
   }
-  
+
   /**
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
@@ -180,7 +180,7 @@ function moveDodgerRight() {
   function step() {
     DODGER.style.left = `${left += 4}px`
   }
-  
+
   if (left <= 356) {
     window.requestAnimationFrame(step)
   }
