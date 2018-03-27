@@ -87,21 +87,21 @@ function createRock(x) {
      function step() {
        rock.style.top = `${top += 2}px`
 
-       if (top < 360) {
-         window.requestAnimationFrame(step)
-       } else if (top < 380) {
-         if (checkCollision(rock)) {
-           endGame()
-         } else {
-           window.requestAnimationFrame(step)
+       if (top < 380) {
+         if (top >= 360) {
+           if (checkCollision(rock)) {
+             endGame()
+           } else {
+             window.requestAnimationFrame(step)
+           }
          }
+         window.requestAnimationFrame(step)
        } else {
          GAME.removeChild(rock)
        }
      }
-
      window.requestAnimationFrame(step)
-  }
+   }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
